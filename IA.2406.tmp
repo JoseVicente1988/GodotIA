@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmhc7sypt1ecw"]
+
+[ext_resource type="Script" path="res://addons/IA/Llama3.gd" id="1_8xe7s"]
+[ext_resource type="Texture2D" uid="uid://c1iulr2ksvmfv" path="res://Addons/IA/Resources/audio.png" id="2_bedow"]
+[ext_resource type="Texture2D" uid="uid://bxnle5bxnvpm5" path="res://Addons/IA/Resources/noaudio.png" id="3_0vaj5"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8xe7s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]Hola, soy 🔆IA. Tu compañero en Godot, me especializo en responder dudas o consultas que tengas. Disfruta de consultarme lo que necesites que te respondere tan rapido como [/center]"
+scroll_following = true
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_icons/checked = ExtResource("2_bedow")
+theme_override_icons/unchecked = ExtResource("3_0vaj5")
+icon_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Consulta aqui..."
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Preguntar
+"
+
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="text_submitted" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
