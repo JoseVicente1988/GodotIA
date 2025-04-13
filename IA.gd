@@ -11,7 +11,7 @@ signal download_failed(error: String)
 # ============================================================================
 # Constantes y Variables
 # ============================================================================
-const REPO_URL = "https://raw.githubusercontent.com/JoseVicente1988/GodotIA/refs/heads/main/Version.txt?token=GHSAT0AAAAAADCC453N7NUQH3IX77KP64JSZ734SDQ"
+const REPO_URL = "https://raw.githubusercontent.com/JoseVicente1988/GodotIA/main/Version.txt"
 const ZIP_URL = "https://github.com/JoseVicente1988/GodotIA/archive/refs/heads/main.zip"
 
 var zip_save_path := "res://Addons/IA/Temp/Addon_IA_update.zip"  # Ruta del ZIP descargado
