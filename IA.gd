@@ -2,7 +2,7 @@
 extends EditorPlugin
 
 # ============================================================================
-# Señales del Plugin
+# Señales del Plugin Wikiiii
 # ============================================================================
 signal download_completed(output_dir: String)
 signal download_progress(current: int, total: int)
